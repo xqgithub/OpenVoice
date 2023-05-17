@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sparkbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="#111A19"
+        android:paddingVertical="11dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/roundedCornerImageStyle16">
+
+        <!-- 话题名称 -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivMore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/name" />
+
+        <!-- 话题发布声文的总数 -->
+        <TextView
+            android:id="@+id/tvTopicPublishedNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvName"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:text="3275 Openvoiceover in the last hour" />
+
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="20dp"
+            android:background="@null"
+            android:src="@drawable/icon_nav_arrow2"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTopicPublishedNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvName"
+            app:tint="?android:textColorSecondary" />
+
+        <!-- 热门模块布局 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sclPopularModules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTopicPublishedNumber">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sivAvatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/icon_default_avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/circleStyle" />
+
+            <TextView
+                android:id="@+id/tvUserNameNickName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/name"
+                android:textColor="?attr/textColorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivMoreFeatures"
+                app:layout_constraintStart_toEndOf="@+id/sivAvatar"
+                app:layout_constraintTop_toTopOf="@+id/sivAvatar" />
+
+
+            <TextView
+                android:id="@+id/tvForwarderUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxWidth="200dp"
+                android:maxLines="1"
+                android:text="aaaaaa"
+                android:textColor="?android:textColorLink"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/tvUserNameNickName"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserNameNickName" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="1 hour ago"
+                android:textColor="#40A4ACAC"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvForwarderUsername"
+                app:layout_constraintEnd_toStartOf="@+id/ivMoreFeatures"
+                app:layout_constraintStart_toEndOf="@+id/tvForwarderUsername"
+                app:layout_constraintTop_toTopOf="@+id/tvForwarderUsername" />
+
+            <ImageView
+                android:id="@+id/ivMoreFeatures"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_opv_more_features"
+                app:layout_constraintBottom_toBottomOf="@+id/sivAvatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sivAvatar" />
+
+            <!-- 模型数据 -->
+            <com.shannon.android.lib.components.ShapeableConstraintLayout
+                android:id="@+id/status_trade_layout"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/shape_search_inputbox_bg"
+                android:paddingStart="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/sivAvatar"
+                app:shapeAppearance="@style/roundedCornerImageStyle16">
+
+
+                <com.shannon.android.lib.components.ShapeableTextView
+                    android:id="@+id/stVoices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_FFBA5D"
+                    android:gravity="center"
+                    android:paddingHorizontal="4dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/voiceover"
+                    android:textColor="@color/color_1B1F3E"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/roundedCornerImageStyle8" />
+
+
+                <TextView
+                    android:id="@+id/tvModelName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="33dp"
+                    android:ellipsize="middle"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="@string/model_name"
+                    android:textColor="?attr/textColorPrimary"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stVoices"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toEndOf="@+id/stVoices"
+                    app:layout_constraintTop_toTopOf="@+id/stVoices" />
+            </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+            <ImageView
+                android:id="@+id/playingAnimationView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/status_trade_layout"
+                app:layout_constraintEnd_toEndOf="@+id/status_trade_layout"
+                app:layout_constraintStart_toStartOf="@+id/status_trade_layout"
+                app:layout_constraintTop_toTopOf="@+id/status_trade_layout" />
+
+            <ImageButton
+                android:id="@+id/status_play"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@color/transparent"
+                android:importantForAccessibility="no"
+                android:padding="4dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/status_trade_layout"
+                app:layout_constraintEnd_toEndOf="@+id/status_trade_layout"
+                app:layout_constraintTop_toTopOf="@+id/status_trade_layout"
+                app:srcCompat="@drawable/icon_play"
+                tools:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/status_pause"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@color/transparent"
+                android:importantForAccessibility="no"
+                android:padding="4dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/status_trade_layout"
+                app:layout_constraintEnd_toEndOf="@+id/status_trade_layout"
+                app:layout_constraintTop_toTopOf="@+id/status_trade_layout"
+                app:srcCompat="@drawable/icon_pause"
+                tools:visibility="visible" />
+
+
+            <!-- 嘟文布局 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDuwenContent"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:maxHeight="70dp"
+                app:layout_constraintTop_toBottomOf="@+id/status_trade_layout"
+                tools:visibility="visible">
+
+                <com.shannon.openvoice.components.TextViewSpannable
+                    android:id="@+id/tvStatusContent"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:focusable="true"
+                    android:hyphenationFrequency="full"
+                    android:importantForAccessibility="no"
+                    android:lineSpacingMultiplier="1.1"
+                    android:maxLines="3"
+                    android:paddingVertical="7dp"
+                    android:text="non deserunt ullamco est sit aliquadolor do amet sint.on deserunt ullamco est sit non deserunt ullamco est sit aliquadolor do amet sint.on deserunt ullamco est sit"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/sivPreview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_goneMarginEnd="0dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/sivPreview"
+                    android:layout_width="104dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/status_media_overlay_0"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/sivPreview"
+                    app:layout_constraintEnd_toEndOf="@+id/sivPreview"
+                    app:layout_constraintStart_toStartOf="@+id/sivPreview"
+                    app:layout_constraintTop_toTopOf="@+id/sivPreview"
+                    app:srcCompat="@drawable/ic_play_indicator"
+                    tools:ignore="ContentDescription" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- 回复 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/clForward"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clDuwenContent">
+
+                <ImageButton
+                    android:id="@+id/status_reply"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:importantForAccessibility="no"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/replayCountView"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_reply" />
+
+                <TextView
+                    android:id="@+id/replayCountView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/status_reply"
+                    app:layout_constraintStart_toEndOf="@id/status_reply"
+                    app:layout_constraintTop_toTopOf="@id/status_reply"
+                    tools:text="200" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- 转发 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/clCollect"
+                app:layout_constraintStart_toEndOf="@+id/clReply"
+                app:layout_constraintTop_toTopOf="@+id/clReply">
+
+                <at.connyduck.sparkbutton.SparkButton
+                    android:id="@+id/status_inset"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clipToPadding="false"
+                    android:importantForAccessibility="no"
+                    android:padding="4dp"
+                    app:layout_constraintEnd_toStartOf="@+id/reblogCountView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    sparkbutton:activeImage="@drawable/icon_reblog_active"
+                    sparkbutton:iconSize="28dp"
+                    sparkbutton:inactiveImage="@drawable/icon_reblog_normal"
+                    sparkbutton:primaryColor="@color/color_blue_light"
+                    sparkbutton:secondaryColor="@color/color_blue_light" />
+
+                <TextView
+                    android:id="@+id/reblogCountView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/status_inset"
+                    app:layout_constraintStart_toEndOf="@id/status_inset"
+                    app:layout_constraintTop_toTopOf="@id/status_inset"
+                    tools:text="200" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- 收藏 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clCollect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/clForward"
+                app:layout_constraintTop_toTopOf="@+id/clForward">
+
+                <at.connyduck.sparkbutton.SparkButton
+                    android:id="@+id/status_favourite"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="70dp"
+                    android:clipToPadding="false"
+                    android:importantForAccessibility="no"
+                    android:padding="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    sparkbutton:activeImage="@drawable/icon_favourite_active"
+                    sparkbutton:iconSize="28dp"
+                    sparkbutton:inactiveImage="@drawable/icon_favourite_normal"
+                    sparkbutton:primaryColor="@color/color_orange_light"
+                    sparkbutton:secondaryColor="@color/color_orange_light" />
+
+                <TextView
+                    android:id="@+id/favouriteCountView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/status_favourite"
+                    app:layout_constraintStart_toEndOf="@id/status_favourite"
+                    app:layout_constraintTop_toTopOf="@id/status_favourite"
+                    tools:text="200" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- 热门标识 -->
+            <ImageView
+                android:id="@+id/ivPopularLogo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="7dp"
+                android:src="@drawable/ic_opv_popular_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

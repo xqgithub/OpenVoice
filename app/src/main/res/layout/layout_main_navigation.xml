@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/navigationBarBackground"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/homeLayout"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/homeTabIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/selector_home" />
+
+        <TextView
+            android:id="@+id/homeTabText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Home"
+            android:textColor="@color/color_main_tab_text"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <!--    <LinearLayout
+            android:id="@+id/federatedLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tradeLayout"
+            app:layout_constraintStart_toEndOf="@id/homeLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/federatedTabIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/selector_public" />
+
+            <TextView
+                android:id="@+id/federatedTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/color_main_tab_text" />
+
+        </LinearLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/tradeLayout"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tradeTabIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/selector_trade" />
+
+        <TextView
+            android:id="@+id/tradeTabText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Market"
+            android:textColor="@color/color_main_tab_text"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/mainAddButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-21dp"
+        android:layout_weight="1.0"
+        android:src="@drawable/icon_main_add" />
+
+    <LinearLayout
+        android:id="@+id/creationLayout"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/creationTabIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/selector_add" />
+
+        <TextView
+            android:id="@+id/creationTabText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Model"
+            android:textColor="@color/color_main_tab_text"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notificationLayout"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_weight="1.0">
+
+        <ImageView
+            android:id="@+id/notificationTabIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/selector_message"
+            app:layout_constraintBottom_toTopOf="@id/notificationTabText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/baseline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <com.shannon.android.lib.components.ShapeableTextView
+            android:id="@+id/badgeView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:includeFontPadding="false"
+            android:textSize="10sp"
+            android:background="@color/color_EC5143"
+            app:shapeAppearance="@style/roundedCornerImageStyle8"
+            app:layout_constraintStart_toStartOf="@id/baseline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/notificationTabText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Chat"
+            android:textColor="@color/color_main_tab_text"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notificationTabIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

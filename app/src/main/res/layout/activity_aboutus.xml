@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolsbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.shannon.openvoice.util.MyNestedScrollView
+        android:id="@+id/nsvFunctionList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/clContactUs"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sivLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll"
+                app:shapeAppearance="@style/roundedCornerImageStyle24"
+                app:srcCompat="@drawable/icon_launcher" />
+
+
+            <ImageView
+                android:id="@+id/ivlogo"
+                android:layout_width="187dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_opv_aboutus_logo"
+                app:layout_constraintEnd_toEndOf="@+id/sivLogo"
+                app:layout_constraintStart_toStartOf="@+id/sivLogo"
+                app:layout_constraintTop_toBottomOf="@+id/sivLogo" />
+
+            <TextView
+                android:id="@+id/tvVersionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?android:textColorSecondary"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/ivlogo"
+                app:layout_constraintStart_toStartOf="@+id/ivlogo"
+                app:layout_constraintTop_toBottomOf="@+id/ivlogo"
+                tools:text="V 1.0.0" />
+
+            <TextView
+                android:id="@+id/atvIntroduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/white"
+                android:text="@string/desc_products"
+                app:layout_constraintTop_toBottomOf="@+id/tvVersionName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.shannon.openvoice.util.MyNestedScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContactUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvContactUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_contact_us"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLeftArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_opv_aboutus_left_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvContactUs"
+            app:layout_constraintEnd_toStartOf="@+id/tvContactUs"
+            app:layout_constraintTop_toTopOf="@+id/tvContactUs" />
+
+
+        <ImageView
+            android:id="@+id/ivRightArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_opv_aboutus_right_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvContactUs"
+            app:layout_constraintStart_toEndOf="@+id/tvContactUs"
+            app:layout_constraintTop_toTopOf="@+id/tvContactUs" />
+
+        <com.shannon.openvoice.components.ImageAndTextUi
+            android:id="@+id/itDiscord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/itTelegram"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
+
+        <com.shannon.openvoice.components.ImageAndTextUi
+            android:id="@+id/itTelegram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/itTwitter"
+            app:layout_constraintStart_toEndOf="@+id/itDiscord"
+            app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
+
+        <com.shannon.openvoice.components.ImageAndTextUi
+            android:id="@+id/itTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itTelegram"
+            app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

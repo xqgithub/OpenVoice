@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+
+    <LinearLayout
+        android:id="@+id/sellerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/priceLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sellerAvatarView"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/icon_default_avatar"
+            app:shapeAppearance="@style/circleStyle" />
+
+        <TextView
+            android:id="@+id/sellerDisplayNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:importantForAccessibility="no"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp"
+            tools:text="Ente r the void you foooooo" />
+
+        <TextView
+            android:id="@+id/sellerUserNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="?android:textColorLink"
+            android:textSize="14sp"
+            tools:text="name" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/priceLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/sellerLayout"
+        app:layout_constraintEnd_toStartOf="@id/buyerLayout"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/sellerLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icon_trade_direction" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background_price_unit"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/unitView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:textColor="?android:textColorSecondary"
+                android:textSize="12sp"
+                tools:text="ETH" />
+
+            <TextView
+                android:id="@+id/priceView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="12sp"
+                tools:text="1.27319234" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/buyerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/priceLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/buyerAvatarView"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/icon_default_avatar"
+            app:shapeAppearance="@style/circleStyle" />
+
+        <TextView
+            android:id="@+id/buyerDisplayNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:importantForAccessibility="no"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp"
+            tools:text="Ente r the void you foooooo" />
+
+        <TextView
+            android:id="@+id/buyerUserNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="?android:textColorLink"
+            android:textSize="14sp"
+            tools:text="name" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/modelNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/sellerLayout"
+        app:layout_constraintTop_toBottomOf="@id/sellerLayout"
+        tools:text="No.10086" />
+
+
+    <TextView
+        android:id="@+id/timestampView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:includeFontPadding="false"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/modelNameView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/modelNameView"
+        tools:text="2022" />
+
+    <TextView
+        android:id="@+id/place_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Hash: "
+        android:textColor="?android:textColorSecondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/modelNameView"
+        app:layout_constraintTop_toBottomOf="@id/modelNameView"
+        tools:text="Hash: " />
+
+    <TextView
+        android:id="@+id/hashView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="middle"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:textColor="@color/color_00B2FF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/place_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/place_1"
+        app:layout_constraintTop_toTopOf="@id/place_1"
+        tools:text="9wduadgauhdsuoazlcsdggawhudaod" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

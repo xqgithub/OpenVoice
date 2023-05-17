@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black">#8f000000</color>
+
+    <color name="color_2284F6">#2284F6</color>
+    <color name="color_E9EBF9">#E9EBF9</color>
+    <color name="color_737AAE">#737AAE</color>
+
+    <color name="color_FF5EEB">#FF5EEB</color>
+    <color name="color_FFBA5D">#FFBA5D</color>
+    <color name="color_86FBD5">#86FBD5</color>
+    <color name="color_FF947B">#FF947B</color>
+    <color name="color_5D6392">#5D6392</color>
+    <color name="color_99FA4E39">#99FA4E39</color>
+    <color name="color_9BAEC8">#9BAEC8</color>
+    <color name="color_444B5D">#444B5D</color>
+    <color name="color_5A61FF">#5A61FF</color>
+    <color name="color_1A81FB">#1A81FB</color>
+    <color name="color_24A3CB">#24A3CB</color>
+    <color name="color_26FFFFFF">#26FFFFFF</color>
+    <color name="color_66FFFFFF">#66FFFFFF</color>
+    <color name="color_B8B8D2">#B8B8D2</color>
+    <color name="color_3866F8">#3866F8</color>
+    <color name="color_3B427A">#3B427A</color>
+    <color name="color_A1A7AF">#A1A7AF</color>
+    <color name="tusky_blue">#2b90d9</color>
+
+    <color name="color_202442">#202442</color>
+    <color name="color_1B1F3E">#1B1F3E</color>
+    <color name="color_292D52">#292D52</color>
+    <color name="color_2D325A">#2D325A</color>
+    <color name="color_0DFFFFFF">#0DFFFFFF</color>
+    <color name="seekBarColor">@color/color_FF5EEB</color>
+    <color name="color_16191F">#16191F</color>
+
+    <color name="windowBackgroundColor">@color/white</color>
+    <color name="toolbarBackgroundColor">@color/transparent</color>
+    <color name="navigationBarBackgroundColor">@color/color_E9EBF9</color>
+
+    <color name="color_shape_secondary_background_start">#268D15EB</color>
+    <color name="color_shape_secondary_background_center">#26142AA7</color>
+    <color name="color_shape_secondary_background_end">#260972AD</color>
+    <color name="colorBackgroundAccent">@color/color_9BAEC8</color>
+
+    <color name="color_blue_light">@color/color_FF947B</color>
+    <color name="color_orange_light">@color/color_FFBA5D</color>
+    <color name="color_green_light">@color/color_86FBD5</color>
+    <color name="composeBackgroundColor">@color/white</color>
+
+    <color name="color_030022">#030022</color>
+    <color name="color_00030F">#00030F</color>
+    <color name="color_3E37E7">#3E37E7</color>
+    <color name="color_78FFEF">#78FFEF</color>
+    <color name="color_66B8B8D2">#66B8B8D2</color>
+
+    <color name="color_0D0D0D">#0D0D0D</color>
+    <color name="color_1AFDFDFD">#1AFDFDFD</color>
+    <color name="color_0DFDFDFD">#0DFDFDFD</color>
+    <color name="color_8C8F8F">#8C8F8F</color>
+    <color name="color_7FF7EC">#7FF7EC</color>
+    <color name="color_EC5143">#EC5143</color>
+    <color name="color_A4ACAC">#40A4ACAC</color>
+    <color name="color_timeline_item">@color/white</color>
+
+    <color name="color_CED3DE">#CED3DE</color>
+    <color name="color_2BB3FF">#2BB3FF</color>
+    <color name="color_030E0D">#030E0D</color>
+    <color name="color_1F1F1F">#1F1F1F</color>
+    <color name="color_FDFDFD">#FDFDFD</color>
+    <color name="color_1AFFFFFF">#1AFFFFFF</color>
+    <color name="color_111A19">#111A19</color>
+    <color name="color_7997FF">#7997FF</color>
+    <color name="color_BF8CFF">#BF8CFF</color>
+    <color name="color_52D094">#52D094</color>
+    <color name="color_00B2FF">#00B2FF</color>
+    <color name="color_393a3e">#393a3e</color>
+
+</resources>

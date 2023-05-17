@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="toolbarBackground" format="reference|color" />
+    <attr name="navigationBarBackground" format="color" />
+    <attr name="iconTintOnPrimary" format="color" />
+    <attr name="iconTintColorSecondary" format="color" />
+    <attr name="textColorPrimary" format="color" />
+    <attr name="colorBackgroundAccent" format="reference|color" />
+    <attr name="colorBackgroundPlaceholder" format="reference|color" />
+    <attr name="colorLoginInputboxBg" format="reference|color" />
+    <attr name="colormodelsuc" format="reference|color" />
+    <attr name="colormodelfail" format="reference|color" />
+    <attr name="colorBackgroundDarkGreen" format="reference|color" />
+    <attr name="bulletFrameBackground" format="reference|color" />
+</resources>

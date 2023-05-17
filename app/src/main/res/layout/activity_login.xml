@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:navigationBarColor">
+
+    <ImageView
+        android:id="@+id/ivBg"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:src="@drawable/ic_opv_login_bg2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/toolbarBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/navigationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_nav_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/iconTintOnPrimary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+
+    <ImageView
+        android:id="@+id/ivlogo"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:src="@drawable/ic_opv_login_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guide" />
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivlogo"
+        app:shapeAppearance="@style/roundedCornerStyle_LT_RT_20">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvChangePwdHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_goneMarginTop="7dp"
+            tools:text="1111111"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvChangePwdHint2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sclVerificationCode"
+            app:layout_goneMarginTop="7dp"
+            tools:text="没有收到验证码? 请联系客服:service@aifun.com"
+            tools:visibility="visible" />
+
+
+        <com.shannon.android.lib.components.ShapeableConstraintLayout
+            android:id="@+id/sclVerificationCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/stCountDown"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guide2"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivVerificationCode"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_changepwd_verificationcode"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etVerificationCode"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/transparent"
+                android:hint="@string/desc_code"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="?attr/textColorPrimary"
+                android:textColorHint="@color/color_66FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivVerificationCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivVerificationCode"
+                app:layout_constraintTop_toTopOf="@+id/ivVerificationCode" />
+        </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+        <com.shannon.android.lib.components.ShapeableTextView
+            android:id="@+id/stCountDown"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:gravity="center"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/sclVerificationCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sclVerificationCode"
+            app:shapeAppearance="@style/circleStyle"
+            tools:text="13s"
+            tools:visibility="visible" />
+
+        <!-- 验证码重新发送按钮 -->
+        <ImageView
+            android:id="@+id/ivVerificationCodeResend"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_opv_login_resend"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/sclVerificationCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sclVerificationCode"
+            tools:visibility="visible" />
+
+        <com.shannon.android.lib.components.ShapeableConstraintLayout
+            android:id="@+id/sclNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvChangePwdHint2"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivNickName"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_signup_nickname"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etNickName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/transparent"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="?attr/textColorPrimary"
+                android:textColorHint="@color/color_66FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivNickName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivNickName"
+                app:layout_constraintTop_toTopOf="@+id/ivNickName" />
+        </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+        <com.shannon.android.lib.components.ShapeableConstraintLayout
+            android:id="@+id/sclMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/sclNickName">
+
+            <ImageView
+                android:id="@+id/ivMail"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etMail"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/transparent"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="?attr/textColorPrimary"
+                android:textColorHint="@color/color_66FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivMail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMail"
+                app:layout_constraintTop_toTopOf="@+id/ivMail"
+                tools:text="test2@voicedev.aifun.com" />
+        </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+        <com.shannon.android.lib.components.ShapeableConstraintLayout
+            android:id="@+id/sclPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/sclMail">
+
+            <ImageView
+                android:id="@+id/ivPwd"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_pwd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etPwd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/transparent"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/pwd"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="?attr/textColorPrimary"
+                android:textColorHint="@color/color_66FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPwd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivPwd"
+                app:layout_constraintTop_toTopOf="@+id/ivPwd" />
+
+            <ImageView
+                android:id="@+id/ivEye"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_pwd_hide"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+        <com.shannon.android.lib.components.ShapeableConstraintLayout
+            android:id="@+id/sclPwdConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/sclPwd">
+
+            <ImageView
+                android:id="@+id/ivPwdConfirm"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_pwd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etPwdConfirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/transparent"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/desc_verify_newpwd"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="?attr/textColorPrimary"
+                android:textColorHint="@color/color_66FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPwdConfirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivPwdConfirm"
+                app:layout_constraintTop_toTopOf="@+id/ivPwdConfirm" />
+
+            <ImageView
+                android:id="@+id/ivEye2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_pwd_hide"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+
+        <com.shannon.android.lib.components.ShapeableConstraintLayout
+            android:id="@+id/sclBirthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_login_inputbox_bg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/sclPwdConfirm"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivBirthday"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_opv_signup_birthday"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBirthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:text="@string/birthday"
+                android:textColor="?attr/textColorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBirthday"
+                app:layout_constraintStart_toEndOf="@+id/ivBirthday"
+                app:layout_constraintTop_toTopOf="@+id/ivBirthday" />
+        </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tvPwdRule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/format_pwd"
+            android:textColor="@color/color_B8B8D2"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/sclBirthday"
+            tools:visibility="visible" />
+
+
+        <com.shannon.openvoice.components.TextAndTextUi
+            android:id="@+id/tt_forgotPassword_backLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sclBirthday" />
+
+
+        <com.shannon.android.lib.components.ShapeableButton
+            android:id="@+id/sbBack"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_primary_background4"
+            android:includeFontPadding="false"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/sbGoToLogin"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="0.65"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tt_forgotPassword_backLogin"
+            tools:visibility="visible" />
+
+
+        <com.shannon.android.lib.components.ShapeableButton
+            android:id="@+id/sbGoToLogin"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/selector_button_primary_background"
+            android:includeFontPadding="false"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/sbBack"
+            app:layout_constraintTop_toBottomOf="@+id/tt_forgotPassword_backLogin"
+            app:layout_goneMarginStart="0dp"
+            app:shapeAppearance="@style/roundedCornerImageStyle28" />
+
+        <com.shannon.openvoice.components.TextAndTextUi
+            android:id="@+id/ttToRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:padding="5dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sbGoToLogin" />
+
+        <!-- 注册页面提示勾选 -->
+        <com.shannon.openvoice.components.ImageAndTextUi
+            android:id="@+id/itPrompt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ttToRegister"
+            tools:visibility="visible" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

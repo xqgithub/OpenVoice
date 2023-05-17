@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolsbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.shannon.openvoice.util.MyNestedScrollView
+        android:id="@+id/nsvEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSave"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--    <TextView-->
+            <!--        android:id="@+id/tvSave"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginEnd="8dp"-->
+            <!--        android:padding="8dp"-->
+            <!--        android:text="@string/save"-->
+            <!--        android:textColor="?android:textColorSecondary"-->
+            <!--        android:textSize="15sp"-->
+            <!--        app:layout_constraintBottom_toBottomOf="@+id/toolsbar"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintTop_toTopOf="@+id/toolsbar" />-->
+
+            <!-- 用户背景图 -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sivUserBackgroundImage"
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:background="#1F1F1F"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cameraPlaceholder1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_camera_placeholder"
+                app:layout_constraintBottom_toBottomOf="@+id/sivUserBackgroundImage"
+                app:layout_constraintEnd_toEndOf="@+id/sivUserBackgroundImage"
+                app:layout_constraintStart_toStartOf="@+id/sivUserBackgroundImage"
+                app:layout_constraintTop_toTopOf="@+id/sivUserBackgroundImage" />
+
+            <!-- 用户头像 -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sivUserAvatar"
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="138dp"
+                android:background="#1F1F1F"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cameraPlaceholder2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_camera_placeholder"
+                app:layout_constraintBottom_toBottomOf="@+id/sivUserAvatar"
+                app:layout_constraintEnd_toEndOf="@+id/sivUserAvatar"
+                app:layout_constraintStart_toStartOf="@+id/sivUserAvatar"
+                app:layout_constraintTop_toTopOf="@+id/sivUserAvatar" />
+
+
+            <!-- 名字修改 -->
+            <com.shannon.android.lib.components.ShapeableConstraintLayout
+                android:id="@+id/sclNickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="33dp"
+                android:background="?attr/bulletFrameBackground"
+                app:layout_constraintTop_toBottomOf="@+id/sivUserAvatar"
+                app:shapeAppearance="@style/roundedCornerImageStyle8">
+
+                <TextView
+                    android:id="@+id/tvNickname"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/name"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/etNickname"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/etNickname" />
+
+                <EditText
+                    android:id="@+id/etNickname"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:background="@null"
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="?android:textColorSecondary"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvNickname" />
+
+            </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+
+            <!--    <View-->
+            <!--        android:id="@+id/viewDividingLine1"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="0.5dp"-->
+            <!--        android:layout_marginHorizontal="15dp"-->
+            <!--        android:background="@color/divider"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/etNickname" />-->
+
+            <!-- 生日修改 -->
+            <com.shannon.android.lib.components.ShapeableConstraintLayout
+                android:id="@+id/clBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="16dp"
+                android:background="?attr/bulletFrameBackground"
+                app:layout_constraintTop_toBottomOf="@+id/sclNickname"
+                app:shapeAppearance="@style/roundedCornerImageStyle8">
+
+                <TextView
+                    android:id="@+id/tvBirthday"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/birthday"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBirthdayValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvBirthday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvBirthday"
+                    app:layout_constraintTop_toTopOf="@+id/tvBirthday" />
+
+                <ImageView
+                    android:id="@+id/ibMore"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/icon_nav_arrow2"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvBirthdayValue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvBirthdayValue"
+                    app:tint="?attr/iconTintOnPrimary" />
+            </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+            <!--    <View-->
+            <!--        android:id="@+id/viewDividingLine2"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="0.5dp"-->
+            <!--        android:layout_marginHorizontal="15dp"-->
+            <!--        android:background="@color/divider"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/clBirthday" />-->
+
+
+            <!-- 个人简介 -->
+            <com.shannon.android.lib.components.ShapeableConstraintLayout
+                android:id="@+id/sclbio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="16dp"
+                android:background="?attr/bulletFrameBackground"
+                android:minHeight="228dp"
+                app:layout_constraintTop_toBottomOf="@+id/clBirthday"
+                app:shapeAppearance="@style/roundedCornerImageStyle8">
+
+                <EditText
+                    android:id="@+id/etBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@null"
+                    android:gravity="left|top"
+                    android:hint="@string/personal_profile"
+                    android:inputType="textMultiLine"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="16dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="?android:textColorSecondary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvNickname"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.shannon.android.lib.components.ShapeableConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.shannon.openvoice.util.MyNestedScrollView>
+
+
+    <com.shannon.android.lib.components.ShapeableTextView
+        android:id="@+id/tvSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/selector_button_primary_background"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="@string/save"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shapeAppearance="@style/roundedCornerImageStyle24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

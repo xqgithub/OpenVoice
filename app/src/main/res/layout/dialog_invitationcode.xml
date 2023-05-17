@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_invitation_bg"
+    android:paddingBottom="20dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/invitation_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/title_invitation_code"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/atvInvitationCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="12dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/content_invitation_code"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclInvitationCode"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/color_A4ACAC"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/atvInvitationCode"
+        app:layout_constraintStart_toStartOf="@+id/atvInvitationCode"
+        app:layout_constraintTop_toBottomOf="@+id/atvInvitationCode"
+        app:shapeAppearance="@style/roundedCornerImageStyle26">
+
+        <EditText
+            android:id="@+id/etInvitationCode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/desc_input_invitationcode"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="?attr/textColorPrimary"
+            android:textColorHint="@color/color_66FFFFFF"
+            android:textSize="14sp" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <com.shannon.android.lib.components.ShapeableButton
+        android:id="@+id/sbGoToCreation"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/selector_button_primary_background"
+        android:includeFontPadding="false"
+        android:text="@string/sure"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/sclInvitationCode"
+        app:layout_constraintStart_toStartOf="@+id/sclInvitationCode"
+        app:layout_constraintTop_toBottomOf="@+id/sclInvitationCode"
+        app:shapeAppearance="@style/roundedCornerImageStyle26" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/background_timeline_item">
+
+    <ImageView
+        android:id="@+id/bidIconView"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/icon_default_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/modelNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/userNameView"
+        app:layout_constraintStart_toEndOf="@id/bidIconView"
+        app:layout_constraintTop_toTopOf="@id/bidIconView"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="No.10086" />
+
+    <TextView
+        android:id="@+id/userNameView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/bidIconView"
+        app:layout_constraintEnd_toStartOf="@id/timestampView"
+        app:layout_constraintStart_toStartOf="@id/modelNameView"
+        app:layout_constraintTop_toBottomOf="@id/modelNameView"
+        tools:text="name" />
+
+    <TextView
+        android:id="@+id/timestampView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:includeFontPadding="false"
+        android:text="2022"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/userNameView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/userNameView" />
+
+    <TextView
+        android:id="@+id/priceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_price_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bidIconView"
+        tools:text="12345.1234" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

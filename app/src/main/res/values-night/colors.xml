@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="windowBackgroundColor">@color/color_0D0D0D</color>
+    <color name="toolbarBackgroundColor">@color/transparent</color>
+    <color name="navigationBarBackgroundColor">@color/color_0D0D0D</color>
+    <color name="seekBarColor">#FF5EEB</color>
+    <color name="composeBackgroundColor">@color/color_0D0D0D</color>
+    <color name="color_timeline_item">#111A19</color>
+
+</resources>

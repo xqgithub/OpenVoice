@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/voiceTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_voice_text"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="172dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- 注意事项说明 -->
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclPrecautions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_status_model"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/recordHintLayer"
+        app:shapeAppearance="@style/roundedCornerImageStyle4">
+
+        <ImageView
+            android:id="@+id/ivPrecautions"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_opv_precautions"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stPrecautions"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="14dp"
+            android:gravity="left"
+            android:text="@string/desc_supported_languages"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivPrecautions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivPrecautions"
+            app:layout_constraintTop_toTopOf="@+id/ivPrecautions" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/recordHintLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/startRecordButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.shannon.android.lib.components.ShapeableTextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/shape_primary_background"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="@string/start_recording"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:shapeAppearance="@style/roundedCornerImageStyle4" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_bubble_arrow"
+            app:tint="?android:colorPrimary" />
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/recordingAnimationView"
+        android:layout_width="138dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/startRecordButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="recording.json"
+        app:lottie_loop="true" />
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/playLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:background="@drawable/background_status_model"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/recordHintLayer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/recordHintLayer"
+        app:shapeAppearance="@style/roundedCornerStyle_LTB_22"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:background="@color/transparent"
+            android:src="@drawable/selector_model_play_status"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="14dp"
+            android:text="@string/audition"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/playButton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <TextView
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:drawablePadding="5dp"
+        android:enabled="true"
+        android:text="@string/upload"
+        android:textColor="#5D6392"
+        android:textSize="12sp"
+        app:drawableTint="#5D6392"
+        app:drawableTopCompat="@drawable/icon_record_upload"
+        app:layout_constraintBottom_toBottomOf="@id/recordHintLayer"
+        app:layout_constraintEnd_toStartOf="@id/recordHintLayer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/recordHintLayer" />
+
+    <TextView
+        android:id="@+id/previousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:drawablePadding="5dp"
+        android:enabled="true"
+        android:text="@string/last"
+        android:textColor="@color/record_next_fond_color"
+        android:textSize="12sp"
+        app:drawableTint="@color/record_next_fond_color"
+        app:drawableTopCompat="@drawable/icon_record_previous"
+        app:layout_constraintBottom_toBottomOf="@id/startRecordButton"
+        app:layout_constraintEnd_toStartOf="@id/startRecordButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/startRecordButton" />
+
+    <ImageButton
+        android:id="@+id/startRecordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ripple_record_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/stopRecordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ripple_record_stop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:drawablePadding="5dp"
+        android:enabled="false"
+        android:text="@string/button_next"
+        android:textColor="@color/record_next_fond_color"
+        android:textSize="12sp"
+        app:drawableTint="@color/record_next_fond_color"
+        app:drawableTopCompat="@drawable/icon_record_next"
+        app:layout_constraintBottom_toBottomOf="@id/startRecordButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/startRecordButton"
+        app:layout_constraintTop_toTopOf="@id/startRecordButton" />
+
+    <TextView
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:drawablePadding="5dp"
+        android:enabled="false"
+        android:text="@string/button_next"
+        android:textColor="@color/record_next_fond_color"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:drawableTint="@color/record_next_fond_color"
+        app:drawableTopCompat="@drawable/icon_record_next"
+        app:layout_constraintBottom_toBottomOf="@id/startRecordButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/startRecordButton"
+        app:layout_constraintTop_toTopOf="@id/startRecordButton"
+        tools:visibility="visible" />
+
+
+    <FrameLayout
+        android:id="@+id/loadingLayer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#68000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/background_timeline_item">
+
+    <com.shannon.android.lib.components.ShapeableTextView
+        android:id="@+id/iconView"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:colorPrimary"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingHorizontal="5dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/circleStyle"
+        tools:text="No.10086" />
+
+    <TextView
+        android:id="@+id/modelNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/ownerView"
+        app:layout_constraintStart_toEndOf="@id/iconView"
+        app:layout_constraintTop_toTopOf="@id/iconView"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="No.10086" />
+
+    <TextView
+        android:id="@+id/ownerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconView"
+        app:layout_constraintEnd_toStartOf="@id/priceContainer"
+        app:layout_constraintStart_toEndOf="@id/iconView"
+        app:layout_constraintTop_toBottomOf="@id/modelNameView"
+        tools:text="cccccccccccccccccccc" />
+
+    <LinearLayout
+        android:id="@+id/priceContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/iconView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ownerView"
+        app:layout_constraintTop_toTopOf="@id/iconView">
+
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:gravity="end"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/icon_price_profile"
+            app:drawableTint="?iconTintColorSecondary"
+            tools:text="236.64" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/place_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iconView" />
+
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:src="@drawable/selector_model_play_status"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/place_1" />
+
+    <LinearLayout
+        android:id="@+id/likeContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playButton">
+
+        <ImageView
+            android:id="@+id/iconLikeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/selector_trade_like" />
+
+        <TextView
+            android:id="@+id/likeNumberView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            tools:text="1000" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/tradeIconView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_trade_number"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        app:layout_constraintStart_toEndOf="@id/likeContainer"
+        app:layout_constraintTop_toTopOf="@id/playButton" />
+
+    <TextView
+        android:id="@+id/tradeNumberView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        app:layout_constraintStart_toEndOf="@id/tradeIconView"
+        app:layout_constraintTop_toTopOf="@id/playButton"
+        tools:text="1000" />
+
+    <TextView
+        android:id="@+id/statusNumberView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        app:drawableStartCompat="@drawable/icon_logo_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/playButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playButton"
+        tools:text="1,1111 Openvoiceover" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.OpenVoice" parent="Base.Theme.OpenVoice">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_7FF7EC</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textColorLink">@color/color_7FF7EC</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/windowBackgroundColor</item>
+        <item name="navigationBarBackground">@color/navigationBarBackgroundColor</item>
+        <item name="android:windowBackground">@color/windowBackgroundColor</item>
+        <item name="toolbarBackground">@drawable/background_toolbar</item>
+        <item name="iconTintOnPrimary">@color/color_E9EBF9</item>
+        <item name="iconTintColorSecondary">@color/white</item>
+        <item name="textColorPrimary">@color/color_E9EBF9</item>
+        <item name="colorLoginInputboxBg">@color/color_1F1F1F</item>
+        <item name="colormodelsuc">@color/color_86FBD5</item>
+        <item name="colormodelfail">@color/color_FF947B</item>
+        <item name="android:textColorPrimary">@color/color_E9EBF9</item>
+        <item name="android:textColorSecondary">@color/color_8C8F8F</item>
+        <item name="android:textColorTertiary">@color/color_A4ACAC</item>
+
+        <item name="colorBackgroundAccent">@color/color_444B5D</item>
+        <item name="colorBackgroundPlaceholder">@color/color_2D325A</item>
+        <item name="emptyLayoutButtonTextColor">@color/color_8C8F8F</item>
+        <item name="android:popupMenuStyle">@style/App.PopupMenu.Style</item>
+        <item name="colorBackgroundDarkGreen">@color/color_030E0D</item>
+        <item name="bulletFrameBackground">@color/color_1F1F1F</item>
+
+    </style>
+
+    <style name="App.PopupMenu.Style" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/shape_background_menu</item>
+    </style>
+
+    <style name="Theme.Splash.OpenVoice.Dark" parent="Theme.OpenVoice">
+        <item name="android:windowBackground">@drawable/background_splash_new</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:navigationBarColor">@color/color_00030F</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/logo2
+        </item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">#001210</item>
+    </style>
+
+    <style name="TransparentDialogNoAnimation" parent="@android:style/Theme.Dialog">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--标题  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/background_dialog_confirm</item>
+        <item name="android:textColorPrimary">@color/color_E9EBF9</item>
+        <item name="android:textColorSecondary">@color/color_737AAE</item>
+        <item name="colorPrimary">@color/color_78FFEF</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+</resources>

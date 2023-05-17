@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground">
+
+    <!--    <include layout="@layout/common_toolbar" />-->
+
+    <!-- 用户信息 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clUserInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sivAvatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/roundedCornerImageStyle2"
+            tools:src="@drawable/icon_default_avatar" />
+
+        <TextView
+            android:id="@+id/tvNickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sivAvatar"
+            app:layout_constraintTop_toTopOf="@+id/sivAvatar"
+            tools:text="1111111" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvNickname"
+            app:layout_constraintStart_toStartOf="@+id/tvNickname"
+            app:layout_constraintTop_toBottomOf="@+id/tvNickname"
+            tools:text="2222222" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/navigationBarBackground"
+            app:layout_constraintTop_toBottomOf="@+id/sivAvatar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 功能列表 -->
+    <com.shannon.openvoice.util.MyNestedScrollView
+        android:id="@+id/nsvFunctionList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clUserInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFunctionList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="1dp">
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itCollect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itProfile" />
+
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itYouLikeModels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itCollect" />
+
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itAnnouncement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itYouLikeModels" />
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itDraft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itAnnouncement" />
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itBlackList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itDraft" />
+
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itBlackList" />
+
+
+            <com.shannon.openvoice.components.ImageAndTextUi
+                android:id="@+id/itQuit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itSettings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.shannon.openvoice.util.MyNestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

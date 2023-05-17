@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.shannon.openvoice">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 手机相册 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:maxSdkVersion="22" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <application
+        android:name=".FunApplication"
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@drawable/icon_launcher"
+        android:label="${appName}"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OpenVoice"
+        android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="APP_CHANNEL"
+            android:value="${APP_CHANNEL}" />
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="812" />
+
+        <activity
+            android:name=".business.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Splash.OpenVoice.Dark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="openvoiceover" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".business.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.search.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.shannon.openvoice.business.creation.record.RecordingNotesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.shannon.openvoice.business.creation.record.RecorderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.status.StatusListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.mine.editprofile.EditProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.compose.ComposeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity
+            android:name=".business.main.mine.account.AccountActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.main.mine.account.ModelListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.main.mine.account.FollowingAndFollowerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.main.mine.announcement.AnnouncementsActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".business.main.mine.blacklist.BlackListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.main.mine.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.mine.setting.MyAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.mine.setting.ChangePasswordActiviity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.mine.aboutus.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.viewmedia.ViewMediaActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.main.login.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.guide.GuidePagesActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.main.mine.setting.DestroyAccountActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.creation.models.ModelComprehensiveActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.draft.DraftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.shannon.openvoice.business.timeline.detail.StatusDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.report.ReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.shannon.openvoice.business.creation.detail.ModelDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.main.web.WebActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.main.mine.MineSettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.main.mine.setting.ModelYouLikesAcvity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.shannon.openvoice.business.main.notification.NotificationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.pay.PaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.pay.WalletListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.login.LoginMethodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.main.chat.ChatActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".business.main.login.ImproveInformationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".business.compose.models.ChooseModelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".business.pay.SellActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.shannon.android.lib.player.media.MusicService"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+
+
+        <!-- google FCM 消息-->
+        <service
+            android:name="com.shannon.openvoice.business.googlefcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- 通知图标 -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/icon_launcher" />
+        <!-- 通知颜色  -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/black" />
+        <!-- 您的通知渠道对象的 ID  -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <!--        &lt;!&ndash; FCM 自动初始化功能  &ndash;&gt;-->
+        <!--        <meta-data-->
+        <!--            android:name="firebase_messaging_auto_init_enabled"-->
+        <!--            android:value="true" />-->
+        <!--        &lt;!&ndash; 停用 Analytics 数据收集  &ndash;&gt;-->
+        <!--        <meta-data-->
+        <!--            android:name="firebase_analytics_collection_enabled"-->
+        <!--            android:value="true" />-->
+
+    </application>
+
+</manifest>

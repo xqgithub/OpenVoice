@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/common_toolbar" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image_wallet" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center"
+        android:text="@string/desc_create_wallet"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp" />
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/color_111A19"
+        app:shapeAppearance="@style/roundedCornerImageStyle16">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.shannon.android.lib.components.ItemTextCell
+                android:id="@+id/walletItemMetamask"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                app:icon="@drawable/icon_wallet_metamask"
+                app:title="@string/wallet_name_metamask"
+                app:titleTextSize="16sp"
+                app:titleTextColor="?android:textColorPrimary"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_0DFFFFFF"/>
+
+            <com.shannon.android.lib.components.ItemTextCell
+                android:id="@+id/walletItemTrust"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                app:icon="@drawable/icon_wallet_trust"
+                app:title="@string/wallet_name_trust"
+                app:titleTextSize="16sp"
+                app:titleTextColor="?android:textColorPrimary"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_0DFFFFFF"/>
+
+            <com.shannon.android.lib.components.ItemTextCell
+                android:id="@+id/walletItemRainbow"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                app:icon="@drawable/icon_wallet_rainbow"
+                app:title="@string/wallet_name_rainbow"
+                app:titleTextSize="16sp"
+                app:titleTextColor="?android:textColorPrimary"/>
+
+        </LinearLayout>
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+</LinearLayout>

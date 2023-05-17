@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolsbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 搜索框 -->
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclSearchContent"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_search_inputbox_bg"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/toolsbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolsbar"
+        app:shapeAppearance="@style/roundedCornerImageStyle16"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_opv_search_gary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etSearchContent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
+            android:background="@color/transparent"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="?attr/textColorPrimary"
+            android:textColorHint="@color/color_A1A7AF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sclSearchContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/searchButton"
+            app:layout_constraintTop_toTopOf="@+id/sclSearchContent" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlSearchTags"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:navigationBarColor"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar"
+        app:tabIndicator="@color/transparent"
+        app:tabIndicatorColor="@color/transparent"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#44CFB3"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="#A1A7AF" />
+
+
+    <View
+        android:id="@+id/viewDividingLine1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/tlSearchTags" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

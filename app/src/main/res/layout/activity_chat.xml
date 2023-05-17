@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/tipsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/place_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/desc_chat_leading1"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.shannon.android.lib.components.ShapeableConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="20dp"
+                    app:strokeColor="#1AFDFDFD"
+                    app:strokeWidth="1dp"
+                    android:padding="1dp"
+                    app:shapeAppearance="@style/roundedCornerImageStyle16"
+                    android:background="@drawable/background_chat_tips"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/place_1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="21dp"
+                            android:text="@string/desc_chat_leading2"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/desc_chat_leading3"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/icon_chat_tips_1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/desc_chat_leading4"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/icon_chat_tips_2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/desc_chat_leading5"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/icon_chat_tips_3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/desc_chat_leading6"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/icon_chat_tips_4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginTop="13dp"
+                            android:layout_marginBottom="21dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/desc_chat_leading7"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/icon_chat_tips_5" />
+                    </LinearLayout>
+                </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/contentView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="38dp"
+            android:layout_marginVertical="8dp"
+            android:layout_weight="1.0"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/background_chat_input"
+            android:hint="@string/desc_send"
+            android:maxLines="3"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="3dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.shannon.android.lib.components.ShapeableButton
+            android:id="@+id/sendButton"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:background="@drawable/selector_button_primary_background"
+            android:text="@string/send"
+            app:shapeAppearance="@style/roundedCornerImageStyle2" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>

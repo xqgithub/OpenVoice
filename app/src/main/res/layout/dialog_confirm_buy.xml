@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_opv_dialog_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userAvatarView"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icon_default_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeButton"
+        app:shapeAppearance="@style/roundedCornerImageStyle2" />
+
+    <TextView
+        android:id="@+id/displayNameView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/followButton"
+        app:layout_constraintStart_toEndOf="@id/userAvatarView"
+        app:layout_constraintTop_toTopOf="@id/userAvatarView"
+        tools:text="displayName" />
+
+    <TextView
+        android:id="@+id/userNameView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginEnd="16dp"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/userAvatarView"
+        app:layout_constraintEnd_toStartOf="@id/followButton"
+        app:layout_constraintStart_toEndOf="@id/userAvatarView"
+        tools:text="displayName" />
+
+    <com.shannon.android.lib.components.ShapeableButton
+        android:id="@+id/followButton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/selector_button_primary_background"
+        android:text="@string/follow"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/userAvatarView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/userAvatarView"
+        app:shapeAppearance="@style/roundedCornerImageStyle2" />
+
+    <TextView
+        android:id="@+id/place_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="@string/model_name"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userAvatarView" />
+
+    <TextView
+        android:id="@+id/modelNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/place_2"
+        app:layout_constraintStart_toEndOf="@id/place_2"
+        app:layout_constraintTop_toTopOf="@id/place_2"
+        tools:text="model name" />
+
+    <TextView
+        android:id="@+id/place_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="@string/current_price"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/place_2" />
+
+    <TextView
+        android:id="@+id/currentPriceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/place_4"
+        app:layout_constraintStart_toEndOf="@id/place_4"
+        app:layout_constraintTop_toTopOf="@id/place_4"
+        tools:text="1.12344 ETH" />
+
+    <com.shannon.android.lib.components.ShapeableButton
+        android:id="@+id/buyButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/selector_button_primary_background"
+        android:text="@string/buy"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentPriceView"
+        app:shapeAppearance="@style/roundedCornerImageStyle8" />
+</androidx.constraintlayout.widget.ConstraintLayout>

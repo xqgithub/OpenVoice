@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolsbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- 官方标签 -->
+    <!--    <com.shannon.android.lib.components.ShapeableButton-->
+    <!--        android:id="@+id/sbLabelOfficeModel"-->
+    <!--        android:layout_width="80dp"-->
+    <!--        android:layout_height="30dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:background="@drawable/selector_button_primary_background3"-->
+    <!--        android:enabled="false"-->
+    <!--        android:includeFontPadding="false"-->
+    <!--        android:text="@string/official"-->
+    <!--        android:textColor="@drawable/selector_button_textview"-->
+    <!--        android:textSize="12sp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolsbar"-->
+    <!--        app:shapeAppearance="@style/roundedCornerStyle_LT_LB_2" />-->
+
+    <!-- 我的模型标签 -->
+    <!--    <com.shannon.android.lib.components.ShapeableButton-->
+    <!--        android:id="@+id/sbLabelMyModel"-->
+    <!--        android:layout_width="80dp"-->
+    <!--        android:layout_height="30dp"-->
+    <!--        android:background="@drawable/selector_button_primary_background3"-->
+    <!--        android:enabled="true"-->
+    <!--        android:includeFontPadding="false"-->
+    <!--        android:text="@string/my_model"-->
+    <!--        android:textColor="@drawable/selector_button_textview"-->
+    <!--        android:textSize="12sp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/sbLabelOfficeModel"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/sbLabelOfficeModel"-->
+    <!--        app:shapeAppearance="@style/roundedCornerStyle_RT_RB_2" />-->
+
+
+    <!-- 显示 喜欢模型页面 -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0pt"
+        android:layout_height="0pt"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar" />
+
+    <!-- 显示 官方模型和我的模型页面 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cltabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="@color/transparent"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="0dp"
+            app:tabRippleColor="@null" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/common_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/login"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout" />
+
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclNickName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/shape_login_inputbox_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <ImageView
+            android:id="@+id/ivNickName"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_opv_signup_nickname"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/userNameEdit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="22dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/transparent"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:maxLength="30"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="?attr/textColorPrimary"
+            android:textColorHint="@color/color_66FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivNickName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivNickName"
+            app:layout_constraintTop_toTopOf="@+id/ivNickName" />
+
+        <requestFocus />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_login_inputbox_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/sclNickName"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/ivBirthday"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_opv_signup_birthday"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/birthdayView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:hint="@string/birthday"
+            android:textColor="?attr/textColorPrimary"
+            android:textColorHint="@color/color_66FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBirthday"
+            app:layout_constraintStart_toEndOf="@+id/ivBirthday"
+            app:layout_constraintTop_toTopOf="@+id/ivBirthday" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <com.shannon.android.lib.components.ShapeableButton
+        android:id="@+id/sureButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/selector_button_primary_background"
+        android:enabled="false"
+        android:includeFontPadding="false"
+        android:text="@string/sure"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/sclBirthday"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearance="@style/roundedCornerImageStyle28" />
+</androidx.constraintlayout.widget.ConstraintLayout>

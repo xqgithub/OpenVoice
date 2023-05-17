@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- EmptyDefaultLayout -->
+    <item name="emptyImageView" type="id" />
+    <item name="emptyTextView" type="id" />
+    <item name="emptyButtonView" type="id" />
+
+</resources>

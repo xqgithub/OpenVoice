@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:text="@string/desc_all"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/sclclean"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sclclean" />
+
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/shape_secondary_background"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/roundedCornerImageStyle8">
+
+        <com.shannon.openvoice.components.ImageAndTextUi
+            android:id="@+id/itFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclclean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/shape_secondary_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/sclFilter"
+        app:layout_constraintEnd_toStartOf="@+id/sclFilter"
+        app:layout_constraintTop_toTopOf="@+id/sclFilter"
+        app:shapeAppearance="@style/roundedCornerImageStyle8">
+
+        <com.shannon.openvoice.components.ImageAndTextUi
+            android:id="@+id/itClean"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <me.jingbin.library.ByRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sclFilter" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

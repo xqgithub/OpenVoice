@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/toolsbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    <com.shannon.openvoice.util.MyNestedScrollView-->
+    <!--        android:id="@+id/nsvFunctionList"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginBottom="10dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/sclBottom"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolsbar">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvLogOutContent"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginHorizontal="20dp"-->
+    <!--            android:lineSpacingExtra="8dp"-->
+    <!--            android:textColor="?attr/textColorPrimary"-->
+    <!--            android:textSize="16dp" />-->
+
+    <!--    </com.shannon.openvoice.util.MyNestedScrollView>-->
+
+    <LinearLayout
+        android:id="@+id/webcontent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/sclBottom"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar" />
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclBottom"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <com.shannon.android.lib.components.ShapeableButton
+            android:id="@+id/sbRefuse"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_primary_background3"
+            android:enabled="true"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="23dp"
+            android:text="@string/decline"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/sbAgree"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/roundedCornerImageStyle8" />
+
+
+        <com.shannon.android.lib.components.ShapeableButton
+            android:id="@+id/sbAgree"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/selector_button_primary_background4"
+            android:enabled="true"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="20dp"
+            android:text="@string/agree_continue"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sbRefuse"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/roundedCornerImageStyle24" />
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

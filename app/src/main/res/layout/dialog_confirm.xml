@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:text="标题"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:text="弹框内容"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/webcontent"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tvContent"
+        app:layout_goneMarginTop="24dp"
+        tools:visibility="visible" />
+
+
+    <View
+        android:id="@+id/viewDividingLine1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@+id/webcontent" />
+
+    <TextView
+        android:id="@+id/tvConfirm"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="Confirm"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/viewDividingLine2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine1"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/viewDividingLine2"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirm"
+        app:layout_constraintEnd_toStartOf="@+id/tvConfirm2"
+        app:layout_constraintStart_toEndOf="@+id/tvConfirm"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirm" />
+
+    <TextView
+        android:id="@+id/tvConfirm2"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="Confirm2"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewDividingLine2"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

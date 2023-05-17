@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:layout_marginTop="16dp">
+
+    <com.shannon.android.lib.components.ShapeableConstraintLayout
+        android:id="@+id/sclContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:background="#111A19"
+        android:paddingHorizontal="16dp"
+        app:shapeAppearance="@style/roundedCornerImageStyle16">
+
+        <ImageView
+            android:id="@+id/ivModelState"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_opv_model_state_original"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/modelNameView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvModelState"
+            app:layout_constraintEnd_toStartOf="@id/checkView"
+            app:layout_constraintStart_toEndOf="@id/ivModelState"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Model Name" />
+
+        <TextView
+            android:id="@+id/tvModelState"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/checkView"
+            app:layout_constraintStart_toStartOf="@+id/modelNameView"
+            app:layout_constraintTop_toBottomOf="@+id/modelNameView"
+            tools:text="1, 1243 Openvoiceover" />
+
+        <com.shannon.android.lib.components.ShapeableButton
+            android:id="@+id/checkView"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/selector_button_primary_background4"
+            android:enabled="true"
+            android:includeFontPadding="false"
+            android:minWidth="58dp"
+            android:paddingHorizontal="10dp"
+            android:text="@string/button_use"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/roundedCornerImageStyle16" />
+
+    </com.shannon.android.lib.components.ShapeableConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivUseLogo"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/ic_opv_model_use_logo"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/sclContentLayout"
+        app:layout_constraintTop_toTopOf="@+id/sclContentLayout"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

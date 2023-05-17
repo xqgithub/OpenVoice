@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 左右的间距 -->
+    <attr name="contentInset" format="dimension" />
+    <attr name="title" format="string" />
+    <!-- 标题的文本颜色 -->
+    <attr name="titleTextColor" format="color" />
+    <attr name="titleTextSize" format="dimension" />
+    <attr name="subtitle" format="string" />
+    <attr name="subtitleTextColor" format="color" />
+    <attr name="subtitleTextSize" format="dimension" />
+    <attr name="icon" format="reference" />
+    <attr name="showItemDivider" format="boolean" />
+    <attr name="dividerColor" format="color" />
+
+    <declare-styleable name="ItemTextCell">
+        <!-- 左右的间距 -->
+        <attr name="contentInset" />
+        <attr name="title" />
+        <!-- 标题的文本颜色 -->
+        <attr name="titleTextColor" />
+        <attr name="titleTextSize" />
+        <attr name="subtitle" />
+        <attr name="subtitleTextColor" />
+        <attr name="subtitleTextSize" />
+        <attr name="valueText" format="string" />
+        <attr name="valueTextColor" format="color" />
+        <attr name="valueTextSize" format="dimension" />
+        <attr name="icon" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="showItemDivider" />
+        <attr name="dividerColor" />
+        <attr name="showBadge" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ItemSwitchCell">
+        <!-- 左右的间距 -->
+        <attr name="contentInset" />
+        <attr name="title" />
+        <!-- 标题的文本颜色 -->
+        <attr name="titleTextColor" />
+        <attr name="titleTextSize" />
+        <attr name="subtitle" />
+        <attr name="subtitleTextColor" />
+        <attr name="subtitleTextSize" />
+        <attr name="icon" />
+        <attr name="showItemDivider" />
+        <attr name="dividerColor" />
+        <attr name="trackDefaultColor" format="color" />
+        <attr name="trackCheckedColor" format="color" />
+        <attr name="thumbColor" format="color" />
+    </declare-styleable>
+
+    <!-- AlignTextView 末行对齐方式 -->
+    <declare-styleable name="AlignTextView">
+        <attr name="align" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <attr name="textCellStyle" format="reference" />
+    <attr name="switchCellStyle" format="reference" />
+
+
+    <attr name="emptyLayoutButtonTextColor" format="color" />
+
+    <!-- 标题栏 -->
+    <attr name="toolbarId" format="reference" />
+    <attr name="navigationButtonId" format="reference" />
+    <attr name="titleViewId" format="reference" />
+
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean" />
+        <attr name="ios" format="boolean" />
+        <attr name="leftSwipe" format="boolean" />
+    </declare-styleable>
+
+    <attr name="strokeColor" format="color" />
+    <attr name="strokeWidth" format="dimension" />
+
+    <declare-styleable name="ShapeableButton">
+       <attr name="strokeColor"/>
+        <attr name="strokeWidth"/>
+        <attr name="shapeAppearance"/>
+    </declare-styleable>
+    <declare-styleable name="ShapeableTextView">
+        <attr name="strokeColor"/>
+        <attr name="strokeWidth"/>
+        <attr name="shapeAppearance"/>
+    </declare-styleable>
+    <declare-styleable name="ShapeableConstraintLayout">
+        <attr name="strokeColor"/>
+        <attr name="strokeWidth"/>
+        <attr name="shapeAppearance"/>
+    </declare-styleable>
+
+    <attr name="confirmDialogStyle" format="reference"/>
+</resources>

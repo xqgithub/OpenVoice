@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="toolbarLayout" type="id" />
+    <item name="navigationButton" type="id" />
+    <item name="titleView" type="id" />
+
+    <!-- TabLayout -->
+    <item name="tabText" type="id" />
+    <item name="tabIndicator" type="id" />
+</resources>

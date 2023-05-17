@@ -1,0 +1,242 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.OpenVoice" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="toolbarId">@id/toolbarLayout</item>
+        <item name="navigationButtonId">@id/navigationButton</item>
+        <item name="titleViewId">@id/titleView</item>
+        <item name="textCellStyle">@style/DefaultTextCellStyle</item>
+        <item name="switchCellStyle">@style/DefaultTextSwitchStyle</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="confirmDialogStyle">@style/TransparentDialogNoAnimation</item>
+    </style>
+
+    <style name="Theme.OpenVoice" parent="Base.Theme.OpenVoice">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_2284F6</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textColorLink">@color/color_737AAE</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/windowBackgroundColor</item>
+        <item name="navigationBarBackground">@color/navigationBarBackgroundColor</item>
+        <item name="android:windowBackground">@color/windowBackgroundColor</item>
+        <item name="toolbarBackground">@color/toolbarBackgroundColor</item>
+        <item name="iconTintOnPrimary">@color/black</item>
+        <item name="iconTintColorSecondary">@color/black</item>
+        <item name="textColorPrimary">@color/black</item>
+        <item name="colorLoginInputboxBg">@color/color_26FFFFFF</item>
+        <item name="colormodelsuc">@color/color_86FBD5</item>
+        <item name="colormodelfail">@color/color_FF947B</item>
+
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/color_5D6392</item>
+        <item name="android:textColorTertiary">@color/color_5D6392</item>
+
+        <item name="colorBackgroundAccent">@color/color_9BAEC8</item>
+        <item name="colorBackgroundPlaceholder">@color/color_E9EBF9</item>
+        <item name="emptyLayoutButtonTextColor">?attr/textColorPrimary</item>
+        <item name="android:popupMenuStyle">@style/App.PopupMenu.Style</item>
+
+    </style>
+
+    <style name="App.PopupMenu.Style" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/shape_background_menu</item>
+
+    </style>
+
+    <style name="App.AutoCompleteTextView.Style" parent="Base.Widget.MaterialComponents.AutoCompleteTextView">
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:popupElevation">0dp</item>
+    </style>
+
+
+    <style name="Theme.Splash.OpenVoice" parent="Theme.OpenVoice">
+        <item name="android:windowBackground">@drawable/background_splash_new</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">false</item>
+    </style>
+
+    <style name="Theme.Splash.OpenVoice.Dark" parent="Theme.OpenVoice">
+        <item name="android:windowBackground">@drawable/background_splash_new</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:navigationBarColor">@color/color_00030F</item>
+    </style>
+
+    <style name="DefaultTextCellStyle">
+        <item name="titleTextColor">?attr/textColorPrimary</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="DefaultTextSwitchStyle" parent="DefaultTextCellStyle">
+        <item name="trackDefaultColor">?attr/colorOnPrimary</item>
+        <item name="trackCheckedColor">?attr/colorPrimary</item>
+        <item name="thumbColor">@color/white</item>
+    </style>
+
+    <style name="TransparentBottomDialog" parent="Theme.Design.BottomSheetDialog">
+        <!-- 背景色 -->
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden|adjustNothing</item>
+        <!-- 窗口背景透明度 -->
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="colorPrimary">@color/color_7FF7EC</item>
+    </style>
+
+    <style name="TransparentDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="colorPrimary">@color/color_7FF7EC</item>
+    </style>
+
+    <style name="TransparentDialog2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:backgroundDimAmount">0.0</item>
+    </style>
+
+    <!-- ShapeableImageView  圆形style -->
+    <style name="circleStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="roundedCornerImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle4">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle8">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle10">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle12">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle16">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle19">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">19dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle24">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle26">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">26dp</item>
+    </style>
+
+    <style name="roundedCornerImageStyle28">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <style name="roundedCornerStyle_RTB_2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">2dp</item>
+        <item name="cornerSizeBottomRight">2dp</item>
+    </style>
+
+    <style name="roundedCornerStyle_LT_RT_20">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+
+    </style>
+
+    <style name="roundedCornerStyle_LTB_22">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">22dp</item>
+        <item name="cornerSizeBottomLeft">22dp</item>
+
+    </style>
+
+    <style name="roundedCornerStyle_RT_RB_2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">2dp</item>
+        <item name="cornerSizeTopRight">2dp</item>
+    </style>
+
+    <style name="roundedCornerStyle_LT_LB_2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">2dp</item>
+        <item name="cornerSizeTopLeft">2dp</item>
+    </style>
+
+    <style name="TransparentDialogNoAnimation" parent="@android:style/Theme.Dialog">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--标题  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/background_dialog_confirm</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/color_7FF7EC</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+    <style name="ViewMediaActivity.AppBarLayout" parent="ThemeOverlay.AppCompat">
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>
+    </style>
+
+</resources>

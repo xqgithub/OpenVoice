@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 自定义标题栏 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolsbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_nav_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/iconTintOnPrimary" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="?attr/textColorPrimary"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ibBack"
+            tools:text="@string/name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itMyAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolsbar" />
+
+    <ImageView
+        android:id="@+id/ivMore"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_nav_arrow2"
+        app:layout_constraintBottom_toBottomOf="@+id/itMyAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itMyAccount"
+        app:tint="?android:textColorSecondary" />
+
+    <View
+        android:id="@+id/viewDividingLine1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itMyAccount" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/languageGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:constraint_referenced_ids="itLanguage,ivMore2,viewDividingLine2"/>
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine1" />
+
+    <ImageView
+        android:id="@+id/ivMore2"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_nav_arrow2"
+        app:layout_constraintBottom_toBottomOf="@+id/itLanguage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itLanguage"
+        app:tint="?android:textColorSecondary" />
+
+    <View
+        android:id="@+id/viewDividingLine2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itLanguage" />
+
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itClearCache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine2" />
+
+    <TextView
+        android:id="@+id/tvCache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0MB"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/itClearCache"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itClearCache" />
+
+    <View
+        android:id="@+id/viewDividingLine3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itClearCache" />
+
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine7" />
+
+    <ImageView
+        android:id="@+id/ivMore3"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_nav_arrow2"
+        app:layout_constraintBottom_toBottomOf="@+id/itUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itUpdate"
+        app:tint="?android:textColorSecondary" />
+
+    <View
+        android:id="@+id/viewDividingLine4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itUpdate" />
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine4" />
+
+    <ImageView
+        android:id="@+id/ivMore4"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_nav_arrow2"
+        app:layout_constraintBottom_toBottomOf="@+id/itAboutUs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itAboutUs"
+        app:tint="?android:textColorSecondary" />
+
+    <View
+        android:id="@+id/viewDividingLine5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itAboutUs" />
+
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itUserAgreement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine3" />
+
+    <ImageView
+        android:id="@+id/ivMore5"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_nav_arrow2"
+        app:layout_constraintBottom_toBottomOf="@+id/itUserAgreement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itUserAgreement"
+        app:tint="?android:textColorSecondary" />
+
+    <View
+        android:id="@+id/viewDividingLine6"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itUserAgreement" />
+
+
+    <com.shannon.openvoice.components.ImageAndTextUi
+        android:id="@+id/itPrivacyPolicy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewDividingLine6" />
+
+    <ImageView
+        android:id="@+id/ivMore6"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_nav_arrow2"
+        app:layout_constraintBottom_toBottomOf="@+id/itPrivacyPolicy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itPrivacyPolicy"
+        app:tint="?android:textColorSecondary" />
+
+    <View
+        android:id="@+id/viewDividingLine7"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/navigationBarBackground"
+        app:layout_constraintTop_toBottomOf="@+id/itPrivacyPolicy" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
